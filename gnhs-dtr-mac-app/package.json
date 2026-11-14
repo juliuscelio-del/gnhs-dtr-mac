@@ -1,0 +1,27 @@
+{
+  "name": "gnhs-dtr",
+  "version": "1.0.0",
+  "description": "Guadalupe NHS Daily Time Record generator",
+  "author": "Guadalupe NHS",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:mac": "electron-builder --mac --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "ph.edu.guadalupenhs.dtr",
+    "productName": "Guadalupe NHS DTR",
+    "artifactName": "GNHS-DTR-${version}-${arch}.${ext}",
+    "files": ["main.js", "app/**/*", "build/icon.png"],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "build/icon.png",
+      "target": [{ "target": "dmg", "arch": ["arm64", "x64"] }]
+    },
+    "dmg": { "title": "Guadalupe NHS DTR" }
+  }
+}
